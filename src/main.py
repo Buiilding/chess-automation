@@ -21,16 +21,17 @@ class ObjectDetection( Predictor, ChessBoardScanner, MouseController, ChessBoard
 
     def is_valid_next_board(self, prev_board, next_board):
         """Check if next_board is a valid state after one legal move from prev_board."""
+        next_board2 = next_board.copy() 
         for move in prev_board.legal_moves:
             temp_board = prev_board.copy()
             temp_board.push(move)
             fen_parts = temp_board.fen().split()[:2]
             new_fen = " ".join(fen_parts)
             temp_board.set_fen(new_fen)
-            fen_parts = next_board.fen().split()[:2]
+            fen_parts = next_board2.fen().split()[:2]
             new_fen = " ".join(fen_parts)
-            next_board.set_fen(new_fen)
-            if temp_board.fen() == next_board.fen():
+            next_board2.set_fen(new_fen)
+            if temp_board.fen() == next_board2.fen():
                 return True
         return False
     def update_board(self):
@@ -41,11 +42,10 @@ class ObjectDetection( Predictor, ChessBoardScanner, MouseController, ChessBoard
         from_x, from_y = self.square_coord_orig[fsquare]
         to_x, to_y = self.square_coord_orig[tsquare]
         self.move_mouse(from_x, from_y, to_x, to_y)
-        self.previous_board = self.board.copy()
+        print("board.fen() in update_board", self.board.fen())
+        self.previous_board = self.board.copy(stack = True)
         self.previous_board.push(move)
-        fen_parts = self.previous_board.fen().split()[:4]
-        new_fen = " ".join(fen_parts)
-        self.previous_board.set_fen(new_fen)
+        print("self.previous_board after push", self.previous_board.fen())
         split2 = self.previous_board.fen().split()
         move_side_prev = split2[1]
         if (move_side_prev == "w"):
@@ -56,6 +56,7 @@ class ObjectDetection( Predictor, ChessBoardScanner, MouseController, ChessBoard
         self.screen_index = int(input("Select screen: "))
         begin_board_position = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR"
         count = 0
+        recheck = 0
         while (True):
             frame = self.screenshot(self.screen_index)
             corners = self.detect_corners(frame)
@@ -84,6 +85,9 @@ class ObjectDetection( Predictor, ChessBoardScanner, MouseController, ChessBoard
                 fen_key = self.generate_fen_key(self.Piece_Notation, self.flip, self.required_move_side, self.move_side, self.previous_board)
                 self.board = chess.Board(fen_key)
                 self.board = chess.Board(self.board.fen())
+                print("current_board", self.board.fen())
+                if (self.previous_board is not None):
+                    print("previous_board", self.previous_board.fen())
                 if (self.board.is_game_over()):
                     self.previous_board = None
                     self.move_side = None
@@ -99,7 +103,7 @@ class ObjectDetection( Predictor, ChessBoardScanner, MouseController, ChessBoard
                         self.flip = None
                         print("game over prev board")
                         continue
-                split = self.board.fen().split()
+                split = self.board.copy().fen().split()
                 current_board_position = split[0]
                 if (current_board_position == begin_board_position and not self.flip):
                     print('first move')
@@ -113,20 +117,27 @@ class ObjectDetection( Predictor, ChessBoardScanner, MouseController, ChessBoard
                     self.flip = None
                     continue
                 elif (self.board.is_valid() and self.previous_board is None):
-                    print("self.previous_board does not exisit, trying to move")
+                    print("self.previous_board does not exist, trying to move")
+                    if (recheck == 0):
+                        recheck += 1
                     self.update_board()
+                    recheck = 0
                     count = 0
                 elif (self.previous_board is not None and self.is_valid_next_board(self.previous_board, self.board)):
+                    if (recheck == 0):
+                        recheck += 1
+                        continue
                     print("self.previous_board exist, trying to move")
                     self.update_board()
+                    recheck = 0
                     count = 0
                 elif (self.previous_board is not None and self.previous_board.fen().split()[0] == self.board.fen().split()[0]):
-                    print("previous board = current board")
+                    print("previous board == current board")
                     continue
                 else:
                     count += 1
                     print("invalid board")
-                    if count == 50:
+                    if count == 30:
                         root = tk.Tk()
                         root.title("Can't validate the board")
 
@@ -149,7 +160,7 @@ class ObjectDetection( Predictor, ChessBoardScanner, MouseController, ChessBoard
                         quit_button = tk.Button(root, text="Quit", command=quit_action)
                         quit_button.pack(side=tk.LEFT, padx=10, pady=10)
 
-                        new_board_button = tk.Button(root, text="New Board", command=change_action)
+                        new_board_button = tk.Button(root, text="Refresh", command=change_action)
                         new_board_button.pack(side=tk.RIGHT, padx=10, pady=10)
 
                         root.mainloop()

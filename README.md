@@ -27,6 +27,9 @@ A program that detects chess pieces via screen capture, calculates optimal moves
    - Stockfish integration for optimal move suggestions
    - Automatic mouse movement execution
 
+## Video Demo
+[Video Demo](src/images/Ches-demo-crop.mp4)
+
 ## Installation
 
 ### Prerequisites
