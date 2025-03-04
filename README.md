@@ -28,7 +28,10 @@ A program that detects chess pieces via screen capture, calculates optimal moves
    - Automatic mouse movement execution
 
 ## Video Demo
-[Video Demo](src/images/Ches-demo-crop.mp4)
+<video width="640" height="360" controls>
+  <source src="https://Buiilding.github.io/chess-automation/src/images/Ches-demo-crop.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ## Installation
 
