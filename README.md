@@ -32,7 +32,6 @@ A program that detects chess pieces via screen capture, calculates optimal moves
   <source src="https://github.com/user-attachments/assets/2c2b0b9c-e4f6-4fb0-8c0d-1ef627209b05" type="video/mp4">
   Your browser does not support the video tag.
 </video>
-
 ## Installation
 
 ### Prerequisites
