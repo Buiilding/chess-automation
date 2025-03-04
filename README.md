@@ -28,8 +28,8 @@ A program that detects chess pieces via screen capture, calculates optimal moves
    - Automatic mouse movement execution
 
 ## Video Demo
-<video width="640" height="360" controls autoplay muted>
-  <source src="https://yourusername.github.io/yourrepo/video/video.mp4" type="video/mp4">
+<video width="640" height="360" autoplay muted>
+  <source src="https://github.com/user-attachments/assets/2c2b0b9c-e4f6-4fb0-8c0d-1ef627209b05" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
