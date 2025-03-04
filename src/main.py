@@ -78,7 +78,7 @@ class ObjectDetection( Predictor, ChessBoardScanner, MouseController, ChessBoard
                 # display(self.piece_coords)
                 ## Calling the two functions above will map the coordinates of the pieces to a board and we will be
                 # be able to move the board with a mouse according to self.square_coord_orig before being cropped
-                cv2.imshow("lmao", predicted_img)
+                # cv2.imshow("lmao", predicted_img)
                 if cv2.waitKey(1) & 0xFF == ord('q'):
                     break
                 fen_key = self.generate_fen_key(self.Piece_Notation, self.flip, self.required_move_side, self.move_side, self.previous_board)

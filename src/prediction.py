@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 class Predictor:
     def predict(self, frame):
-        results = self.model(frame ,conf = 0.85, verbose = False)
+        results = self.model(frame ,conf = 0.7, verbose = False)
         return results
     def predict_board(self, frame):
         results = self.board_model(frame, conf = 0.7, verbose = False)
