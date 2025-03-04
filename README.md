@@ -28,7 +28,7 @@ A program that detects chess pieces via screen capture, calculates optimal moves
    - Automatic mouse movement execution
 
 ## Video Demo
-![Example GIF]([https://github.com/username/repository/blob/main/images/animation.gif](https://github.com/Buiilding/chess-automation/blob/main/src/images/Ches-demo-crop-ezgif.com-video-to-gif-converter.gif))
+![Alt text]([https://github.com/username/repository/blob/main/images/animation.gif](https://github.com/Buiilding/chess-automation/blob/main/src/images/Ches-demo-crop-ezgif.com-video-to-gif-converter.gif))
 
 ### Prerequisites
 - Windows/Linux
