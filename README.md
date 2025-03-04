@@ -16,7 +16,7 @@ A program that detects chess pieces via screen capture, calculates optimal moves
 1. **YOLOv10 Model** ([Dataset](https://universe.roboflow.com/peter-bui/chess-piece-object-detection-tdpqo)) 
    - Trained on 416x416 images
    - Real-time piece detection with bounding boxes
-   ![Chess Detection Example](images/1.png)
+   ![Chess Detection Example](src/images/1.png)
 2. **Chessboard Processing**
    - `chess_fen_utils` for chess board detection through detecting 4 largest corners
    - Dynamic coordinate mapping between pixels and chess notation
