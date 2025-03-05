@@ -88,7 +88,7 @@ class ObjectDetection( Predictor, ChessBoardScanner, MouseController, ChessBoard
                 print("current_board", self.board.fen())
                 if (self.previous_board is not None):
                     print("previous_board", self.previous_board.fen())
-                if (self.board.is_game_over()):
+                if (self.board.is_game_over() and self.board.is_valid()):
                     self.previous_board = None
                     self.move_side = None
                     self.required_move_side = None
