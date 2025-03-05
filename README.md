@@ -16,19 +16,21 @@ A program that detects chess pieces via screen capture, calculates optimal moves
 1. **YOLOv10 Model** ([Dataset](https://universe.roboflow.com/peter-bui/chess-piece-object-detection-tdpqo)) 
    - Trained on 416x416 images
    - Real-time piece detection with bounding boxes
+     
    ![Chess Detection Example](src/images/1.png)
-2. **Chessboard Processing**
+   
+3. **Chessboard Processing**
    - `chess_fen_utils` for chess board detection through detecting 4 largest corners
    - Dynamic coordinate mapping between pixels and chess notation
-3. **FEN Generation**
+4. **FEN Generation**
    - Creates Forsyth-Edwards Notation from detected positions
    - Integrated with `python-chess` library for board management and validation
-4. **AI Move Calculation**
+5. **AI Move Calculation**
    - Stockfish integration for optimal move suggestions
    - Automatic mouse movement execution
 
 ## Video Demo
-![Alt text](https://github.com/Buiilding/chess-automation/blob/main/src/images/Ches-demo-crop-ezgif.com-video-to-gif-converter.gif)
+![Alt text](https://github.com/Buiilding/chess-automation/blob/main/src/images/Ches-demo-crop-ezgif.com-crop.gif)
 
 
 ### Prerequisites
@@ -74,4 +76,3 @@ A program that detects chess pieces via screen capture, calculates optimal moves
 
 ### Notes
 The reason I want to do this project is that one of my life dreams is to create robots that can do human tasks seamlessly. This is not a novel way to cheat in chess.com, rather a way to show how far technology has come and evidence to show that robots can also be capable of what humans can do. Continuing this, I will make technology that assists the world in repetitive tasks that do not require major brainpower. Achieveing this, humans will be able to allocate more time on what is important, such as family, personal connections, artistic passions, endeavors that technology can never ever replicate.
-
