@@ -13,7 +13,7 @@ A program that detects chess pieces via screen capture, calculates optimal moves
 
 ## Program Structure
 ### Core Components
-1. **YOLOv10 Model** ([Dataset](https://universe.roboflow.com/peter-bui/chess-piece-object-detection-tdpqo)) 
+1. **YOLOv11 Model** ([Dataset](https://universe.roboflow.com/peter-bui/chess-piece-object-detection-tdpqo)) 
    - Trained on 416x416 images
    - Real-time piece detection with bounding boxes
      
