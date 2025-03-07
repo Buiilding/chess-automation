@@ -55,7 +55,7 @@ A program that detects chess pieces via screen capture, calculates optimal moves
     - Go to "play bots" (do not play with humans if you don't want to get banned)
     - Choose a bot 
     - The program works best with **Cases** Pieces and **8-Bit** Board (can be modified in settings)
-1. Run main.py (KEEP the chess tab fullscreen -do not split screen-
+1. Run main.py **(KEEP the chess tab fullscreen) -do not split screen-**
     ```bash
     python main.py
 2. Select screen
