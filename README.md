@@ -1,4 +1,4 @@
-# Chess Automation Robot
+# Chess.com Mouse Automtation
 
 A program that detects chess pieces via screen capture, calculates optimal moves using open-source stockfish, and automates mouse movements to play chess. Designed as a foundation for a future physical chess-playing robot trainer.
 
@@ -55,7 +55,7 @@ A program that detects chess pieces via screen capture, calculates optimal moves
     - Go to "play bots" (do not play with humans if you don't want to get banned)
     - Choose a bot 
     - The program works best with **Cases** Pieces and **8-Bit** Board (can be modified in settings)
-1. Run main.py
+1. Run main.py (KEEP the chess tab fullscreen -do not split screen-
     ```bash
     python main.py
 2. Select screen
