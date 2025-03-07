@@ -62,7 +62,7 @@ A program that detects chess pieces via screen capture, calculates optimal moves
     - If you have dual screen, place the terminal in another screen
     - Leave the chess board you want to automate to another screen
     - Type the screen number you want the program to scan
-3. Visualisation (Optional)
+3. Visualisation (Optional) (Dual Screen Needed)
     - If you want to see the detected bounding boxes of the pieces
     - Uncomment the following line in main.py
     ```bash
